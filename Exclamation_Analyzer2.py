@@ -14,12 +14,18 @@ def exclamation_marks(s):
             #should be on the right track. I think if I play with the above section
             #and work it into this code I should have the whole thing figured out.
             newlist = re.findall("\d\D*!!!\D*\d", s)
+                #Would need to be able to count how many times ! appears in the single strings
+                #There is quite literally a count function that I can use 
+                    #Example: string = "Hi" string.count("i")
             print(newlist)
             for x in newlist:
                 #May want to put a while loop here to account for the last of
                 #testing the string as a whole
-                if x[0].isdigit() and x[-1].isdigit():
+                if x[0].isdigit() and x[-1].isdigit(): #may not need this line
                     sum = int(x[0]) + int(x[-1])
+                    #In this section, could I theoretically make it so that any spaces
+                    #where it does = 10 get replaced by a zero, and if the total of the 
+                    #list = 0, then we return true? 
                     if sum != 10:
                         return False
                     else:
